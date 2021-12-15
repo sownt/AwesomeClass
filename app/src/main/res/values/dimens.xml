@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding">25dp</dimen>
+    <dimen name="very_small_spacing">5dp</dimen>
+    <dimen name="small_spacing">10dp</dimen>
+    <dimen name="default_spacing">15dp</dimen>
+    <dimen name="large_spacing">20dp</dimen>
+    <dimen name="very_large_spacing">25dp</dimen>
+</resources>
