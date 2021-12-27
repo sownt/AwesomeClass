@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">AwesomeClass</string>
-    <string name="full_name">Full Name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="retype_password">Please retype this password</string>
     <string name="sign_in">Sign In</string>
-    <string name="sign_up">Sign Up</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="i_m_a_new_user_sign_up">I\'m a new user. Sign Up</string>
-    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="full_name">Full Name</string>
+    <string name="retype_password">Please retype this password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>
