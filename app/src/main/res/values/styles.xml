@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AwesomeClass.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="enforceMaterialTheme">true</item>
+        <item name="enforceTextAppearance">true</item>
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="tabIconTint">@color/tab_selector</item>
+        <item name="tabIndicatorAnimationDuration">@integer/mtrl_tab_indicator_anim_duration_ms</item>
+        <item name="tabIndicatorColor">@color/blue</item>
+        <item name="tabTextAppearance">@android:style/TextAppearance.Widget.TabWidget</item>
+        <item name="tabTextColor">@color/tab_selector</item>
+        <item name="tabRippleColor">@color/blue</item>
+        <item name="tabUnboundedRipple">true</item>
+    </style>
+</resources>

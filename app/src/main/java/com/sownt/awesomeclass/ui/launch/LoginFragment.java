@@ -2,7 +2,9 @@ package com.sownt.awesomeclass.ui.launch;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
@@ -31,12 +33,16 @@ public class LoginFragment extends Fragment {
         forgotPassword = view.findViewById(R.id.btn_forgot);
         signIn = view.findViewById(R.id.btn_sign_in);
         signUp = view.findViewById(R.id.btn_sign_up);
-
         bindingEvents();
     }
 
     private void bindingEvents() {
         signIn.setOnClickListener(v -> login());
+        signUp.setOnClickListener(v -> getParentFragmentManager().beginTransaction().replace(
+                R.id.launch_container,
+                RegisterFragment.class,
+                null
+        ).commit());
     }
 
     public void login() {

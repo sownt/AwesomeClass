@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.22239583333333332" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/drawable/ic_round_email_24.xml" value="0.371875" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/drawable/ic_round_lock_24.xml" value="0.371875" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/drawable/ic_round_user_24.xml" value="0.371875" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/drawable/tab_selector.xml" value="0.371875" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/layout/activity_launch.xml" value="0.29030797101449274" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/layout/activity_main.xml" value="0.35572916666666665" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/layout/activity_plash.xml" value="0.35572916666666665" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/layout/fragment_home.xml" value="0.2875905797101449" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/layout/fragment_login.xml" value="0.35572916666666665" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/layout/fragment_profile.xml" value="0.3125" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/layout/fragment_register.xml" value="0.35572916666666665" />
+        <entry key="../../../../../../mnt/src/android/AwesomeClass/app/src/main/res/layout/item_subject.xml" value="0.35572916666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

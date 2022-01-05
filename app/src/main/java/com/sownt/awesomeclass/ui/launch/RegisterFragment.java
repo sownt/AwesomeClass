@@ -39,6 +39,11 @@ public class RegisterFragment extends Fragment {
 
     private void bindingEvents() {
         signUp.setOnClickListener(v -> register());
+        hasAccount.setOnClickListener(v -> getParentFragmentManager().beginTransaction().replace(
+                R.id.launch_container,
+                LoginFragment.class,
+                null
+        ).commit());
     }
 
     private void register() {

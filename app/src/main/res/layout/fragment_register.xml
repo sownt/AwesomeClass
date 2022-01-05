@@ -6,6 +6,15 @@
     android:padding="@dimen/default_padding"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/clip_welcome"
+        app:layout_constraintBottom_toTopOf="@+id/text_full_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_full_name"
         android:layout_width="match_parent"
@@ -20,7 +29,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hintTextColor="#757575"
             android:inputType="textPersonName"
             tools:ignore="TextContrastCheck" />
 
