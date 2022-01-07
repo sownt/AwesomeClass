@@ -1,6 +1,8 @@
 package com.sownt.awesomeclass.ui.launch;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -8,7 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.sownt.awesomeclass.MainActivity;
 import com.sownt.awesomeclass.R;
 
 public class RegisterFragment extends Fragment {
@@ -50,8 +60,8 @@ public class RegisterFragment extends Fragment {
         if (textFullName.getEditText() == null
                 || textUsername.getEditText() == null
                 || textPassword.getEditText() == null
-                || textRetypePassword.getEditText() == null
-        ) return;
+                || textRetypePassword.getEditText() == null) return;
+
         register(textFullName.getEditText().getText().toString().trim(),
                 textUsername.getEditText().getText().toString().trim(),
                 textPassword.getEditText().getText().toString().trim(),
@@ -64,9 +74,39 @@ public class RegisterFragment extends Fragment {
             validateUsername(username);
             validatePassword(password);
             validateRetypePassword(password, retypePassword);
+            createUser(fullName, username, password);
         } catch (Exception e) {
-
         }
+    }
+
+    private void createUser(String fullName, String username, String password) {
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.createUserWithEmailAndPassword(username, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update user's information
+                        Log.d("AwesomeClass", "createUserWithEmail:success");
+                        FirebaseUser user = firebaseAuth.getCurrentUser();
+                        UserProfileChangeRequest request = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(fullName)
+                                .build();
+                        if (user != null) {
+                            user.updateProfile(request).addOnCompleteListener(task1 -> {
+                                if (task.isSuccessful()) {
+                                    Log.d("AwesomeClass", "User profile updated.");
+                                    if (getView() != null) Snackbar.make(getView(), "Register successful.", Snackbar.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                        Intent intent = new Intent(this.getContext(), MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w("AwesomeClass", "createUserWithEmail:failure", task.getException());
+                        if (getView() != null) Snackbar.make(getView(), "Authentication failed.", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void validateFullName(String fullName) throws Exception {
@@ -84,10 +124,12 @@ public class RegisterFragment extends Fragment {
         if (username == null) {
             textUsername.setErrorContentDescription("Username is null");
             throw new Exception("Username is null");
-        }
-        if (username.isEmpty()) {
-            textUsername.setErrorContentDescription("Username is empty");
+        } else if (!LoginFragment.validate(username)) {
+            textUsername.setError("Invalid Email.");
             throw new Exception("Username is empty");
+        } else {
+            textUsername.setError(null);
+            textUsername.setErrorEnabled(false);
         }
     }
 
@@ -103,17 +145,11 @@ public class RegisterFragment extends Fragment {
     }
 
     private void validateRetypePassword(String password, String retypePassword) throws Exception {
-        if (retypePassword == null) {
-            textRetypePassword.setErrorContentDescription("Retype password is null");
-            throw new Exception("Retype password is null");
-        }
-        if (retypePassword.isEmpty()) {
-            textRetypePassword.setErrorContentDescription("Retype password is empty");
-            throw new Exception("Retype password is empty");
-        }
-        if (!retypePassword.equals(password)) {
-            textRetypePassword.setErrorContentDescription("Password is not match");
-            throw new Exception("Password is not match");
+        if (!password.equals(retypePassword)) {
+            textRetypePassword.setError("Passwords do not match.");
+        } else {
+            textRetypePassword.setError(null);
+            textRetypePassword.setErrorEnabled(false);
         }
     }
 
