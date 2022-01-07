@@ -76,4 +76,9 @@ public class Lecture {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return start.getTime().toString();
+    }
 }

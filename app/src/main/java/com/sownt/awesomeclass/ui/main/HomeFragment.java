@@ -2,6 +2,7 @@ package com.sownt.awesomeclass.ui.main;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -47,8 +48,21 @@ public class HomeFragment extends Fragment {
         for (int i = 1; i <= 10; ++i) {
             lectures.add(new Lecture(
                     "Lecture " + i,
-                    new GregorianCalendar(2022, 1, 10, i, 10, 50),
-                    new GregorianCalendar(2022, 1, 10, 1 + i, 10, 50),
+                    new GregorianCalendar(2022, 0, 10, i, 10, 50),
+                    new GregorianCalendar(2022, 0, 10, 1 + i, 10, 50),
+                    "Hanoi",
+                    false,
+                    getColor(),
+                    "None"));
+//            Log.d("AwesomeClass", lectures.get(i - 1).toString());
+//            Log.d("AwesomeClass", lectures.get(i - 1).getStart().getTimeZone().toString());
+        }
+
+        for (int i = 11; i <= 20; ++i) {
+            lectures.add(new Lecture(
+                    "Lecture " + i,
+                    new GregorianCalendar(2022, 0, 11, i, 10, 50),
+                    new GregorianCalendar(2022, 0, 11, 1 + i, 10, 50),
                     "Hanoi",
                     false,
                     getColor(),
@@ -58,19 +72,8 @@ public class HomeFragment extends Fragment {
         for (int i = 11; i <= 20; ++i) {
             lectures.add(new Lecture(
                     "Lecture " + i,
-                    new GregorianCalendar(2022, 1, 11, i, 10, 50),
-                    new GregorianCalendar(2022, 1, 11, 1 + i, 10, 50),
-                    "Hanoi",
-                    false,
-                    getColor(),
-                    "None"));
-        }
-
-        for (int i = 11; i <= 20; ++i) {
-            lectures.add(new Lecture(
-                    "Lecture " + i,
-                    new GregorianCalendar(2022, 1, 12, i - 10, 10, 50),
-                    new GregorianCalendar(2022, 1, 12, i - 10, 10, 50),
+                    new GregorianCalendar(2022, 0, 12, i - 10, 10, 50),
+                    new GregorianCalendar(2022, 0, 12, i - 10, 10, 50),
                     "Hanoi",
                     false,
                     getColor(),
