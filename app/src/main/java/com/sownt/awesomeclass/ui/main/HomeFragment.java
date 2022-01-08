@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sownt.awesomeclass.R;
 import com.sownt.awesomeclass.adapter.LectureAdapter;
 import com.sownt.awesomeclass.model.Lecture;
@@ -24,6 +25,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
     private RecyclerView plan;
     private LectureAdapter lectureAdapter;
+    private FloatingActionButton addLectures;
 
     public HomeFragment() {
         super(R.layout.fragment_home);
@@ -33,6 +35,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         plan = view.findViewById(R.id.home_plan);
+        addLectures = view.findViewById(R.id.fab_add_lecture);
 
         plan.setLayoutManager(new LinearLayoutManager(this.getContext()));
 

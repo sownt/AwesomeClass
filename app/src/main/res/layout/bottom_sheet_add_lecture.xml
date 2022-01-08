@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/sheet_lecture_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:hint="Add title"
+        android:inputType="text"
+        android:paddingVertical="8dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sheet_lecture_title" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_timer_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/text_all_day"
+        app:layout_constraintTop_toTopOf="@id/text_all_day"
+        app:layout_constraintBottom_toBottomOf="@id/text_all_day"/>
+
+    <TextView
+        android:id="@+id/text_all_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="24dp"
+        android:text="All day"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sheet_all_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/text_all_day"
+        app:layout_constraintBottom_toBottomOf="@id/text_all_day"
+        app:layout_constraintEnd_toEndOf="@id/sheet_lecture_title"/>
+
+    <TextView
+        android:id="@+id/sheet_from_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Date 1"
+        app:layout_constraintStart_toStartOf="@id/text_all_day"
+        app:layout_constraintTop_toBottomOf="@id/text_all_day" />
+
+    <TextView
+        android:id="@+id/sheet_from_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time 1"
+        app:layout_constraintTop_toTopOf="@id/sheet_from_date"
+        app:layout_constraintBottom_toBottomOf="@id/sheet_from_date"
+        app:layout_constraintEnd_toEndOf="@id/sheet_all_day"/>
+
+    <TextView
+        android:id="@+id/sheet_to_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Date 2"
+        app:layout_constraintStart_toStartOf="@id/sheet_from_date"
+        app:layout_constraintTop_toBottomOf="@id/sheet_from_date" />
+
+    <TextView
+        android:id="@+id/sheet_to_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time 2"
+        app:layout_constraintTop_toTopOf="@id/sheet_to_date"
+        app:layout_constraintBottom_toBottomOf="@id/sheet_to_date"
+        app:layout_constraintEnd_toEndOf="@id/sheet_from_time"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_replay_24"
+        app:layout_constraintTop_toTopOf="@id/sheet_repeat"
+        app:layout_constraintBottom_toBottomOf="@id/sheet_repeat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sheet_repeat"/>
+
+    <TextView
+        android:id="@+id/sheet_repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Does not repeat"
+        app:layout_constraintStart_toStartOf="@id/sheet_to_date"
+        app:layout_constraintTop_toBottomOf="@id/sheet_to_date" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sheet_repeat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
