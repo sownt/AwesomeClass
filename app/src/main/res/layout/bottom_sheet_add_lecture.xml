@@ -1,125 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/sheet_lecture_title"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:color/transparent"
-        android:hint="Add title"
-        android:inputType="text"
-        android:paddingVertical="8dp"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-    <View
-        android:id="@+id/divider1"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sheet_lecture_title" />
+        <Button
+            android:id="@+id/sheet_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:layout_marginEnd="24dp"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sheet_lecture_title"
+            app:layout_constraintBottom_toBottomOf="@id/sheet_lecture_title"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_round_timer_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/text_all_day"
-        app:layout_constraintTop_toTopOf="@id/text_all_day"
-        app:layout_constraintBottom_toBottomOf="@id/text_all_day"/>
+        <EditText
+            android:id="@+id/sheet_lecture_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/add_title"
+            android:paddingVertical="8dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@id/sheet_save"
+            app:layout_constraintStart_toStartOf="@id/image_all_day"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_all_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="24dp"
-        android:text="All day"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider1" />
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_lecture_title" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/sheet_all_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/text_all_day"
-        app:layout_constraintBottom_toBottomOf="@id/text_all_day"
-        app:layout_constraintEnd_toEndOf="@id/sheet_lecture_title"/>
+        <ImageView
+            android:id="@+id/image_all_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_timer_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/text_all_day"
+            app:layout_constraintTop_toTopOf="@id/text_all_day"
+            app:layout_constraintBottom_toBottomOf="@id/text_all_day"/>
 
-    <TextView
-        android:id="@+id/sheet_from_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Date 1"
-        app:layout_constraintStart_toStartOf="@id/text_all_day"
-        app:layout_constraintTop_toBottomOf="@id/text_all_day" />
+        <TextView
+            android:id="@+id/text_all_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/all_day"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider1" />
 
-    <TextView
-        android:id="@+id/sheet_from_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time 1"
-        app:layout_constraintTop_toTopOf="@id/sheet_from_date"
-        app:layout_constraintBottom_toBottomOf="@id/sheet_from_date"
-        app:layout_constraintEnd_toEndOf="@id/sheet_all_day"/>
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sheet_all_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/text_all_day"
+            app:layout_constraintBottom_toBottomOf="@id/text_all_day"
+            app:layout_constraintEnd_toEndOf="@id/sheet_save"/>
 
-    <TextView
-        android:id="@+id/sheet_to_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Date 2"
-        app:layout_constraintStart_toStartOf="@id/sheet_from_date"
-        app:layout_constraintTop_toBottomOf="@id/sheet_from_date" />
+        <TextView
+            android:id="@+id/sheet_from_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@id/text_all_day"
+            app:layout_constraintTop_toBottomOf="@id/text_all_day" />
 
-    <TextView
-        android:id="@+id/sheet_to_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time 2"
-        app:layout_constraintTop_toTopOf="@id/sheet_to_date"
-        app:layout_constraintBottom_toBottomOf="@id/sheet_to_date"
-        app:layout_constraintEnd_toEndOf="@id/sheet_from_time"/>
+        <TextView
+            android:id="@+id/sheet_from_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/sheet_from_date"
+            app:layout_constraintBottom_toBottomOf="@id/sheet_from_date"
+            app:layout_constraintEnd_toEndOf="@id/sheet_save"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_round_replay_24"
-        app:layout_constraintTop_toTopOf="@id/sheet_repeat"
-        app:layout_constraintBottom_toBottomOf="@id/sheet_repeat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/sheet_repeat"/>
+        <TextView
+            android:id="@+id/sheet_to_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@id/sheet_from_date"
+            app:layout_constraintTop_toBottomOf="@id/sheet_from_date" />
 
-    <TextView
-        android:id="@+id/sheet_repeat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Does not repeat"
-        app:layout_constraintStart_toStartOf="@id/sheet_to_date"
-        app:layout_constraintTop_toBottomOf="@id/sheet_to_date" />
+        <TextView
+            android:id="@+id/sheet_to_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/sheet_to_date"
+            app:layout_constraintBottom_toBottomOf="@id/sheet_to_date"
+            app:layout_constraintEnd_toEndOf="@id/sheet_from_time"/>
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="24dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sheet_repeat" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_replay_24"
+            app:layout_constraintTop_toTopOf="@id/sheet_repeat"
+            app:layout_constraintBottom_toBottomOf="@id/sheet_repeat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sheet_repeat"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/sheet_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/does_not_repeat"
+            app:layout_constraintStart_toStartOf="@id/sheet_to_date"
+            app:layout_constraintTop_toBottomOf="@id/sheet_to_date" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_repeat" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_videocam_24"
+            app:layout_constraintTop_toTopOf="@id/sheet_link"
+            app:layout_constraintBottom_toBottomOf="@id/sheet_link"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sheet_link"/>
+
+        <EditText
+            android:id="@+id/sheet_link"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/add_video_conferencing"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sheet_repeat"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_link" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_location_on_24"
+            app:layout_constraintTop_toTopOf="@id/sheet_location"
+            app:layout_constraintBottom_toBottomOf="@id/sheet_location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sheet_location"/>
+
+        <EditText
+            android:id="@+id/sheet_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/add_location"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/sheet_link"
+            app:layout_constraintStart_toStartOf="@id/sheet_link"
+            app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_location" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_notifications_active_24"
+            app:layout_constraintTop_toTopOf="@id/sheet_notification"
+            app:layout_constraintBottom_toBottomOf="@id/sheet_notification"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sheet_notification"/>
+
+        <TextView
+            android:id="@+id/sheet_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/add_notification"
+            app:layout_constraintStart_toStartOf="@id/sheet_location"
+            app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_notification" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_circle_24"
+            app:layout_constraintTop_toTopOf="@id/sheet_color"
+            app:layout_constraintBottom_toBottomOf="@id/sheet_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sheet_color"/>
+
+        <TextView
+            android:id="@+id/sheet_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Banana"
+            app:layout_constraintStart_toStartOf="@id/sheet_notification"
+            app:layout_constraintTop_toBottomOf="@id/divider5" />
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_color" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_notes_24"
+            app:layout_constraintTop_toTopOf="@id/sheet_description"
+            app:layout_constraintBottom_toBottomOf="@id/sheet_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sheet_description"/>
+
+        <EditText
+            android:id="@+id/sheet_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@android:color/transparent"
+            android:hint="Add description"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/sheet_location"
+            app:layout_constraintStart_toStartOf="@id/sheet_notification"
+            app:layout_constraintTop_toBottomOf="@id/divider6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
