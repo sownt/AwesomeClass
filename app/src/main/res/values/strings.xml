@@ -11,4 +11,42 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
+    <string name="all_day">All day</string>
+    <string name="save">Save</string>
+    <string name="add_title">Add title</string>
+    <string name="does_not_repeat">Does not repeat</string>
+    <string name="add_video_conferencing">Add video conferencing</string>
+    <string name="add_location">Add location</string>
+    <string name="add_notification">Add notification</string>
+    <string name="add_new_item">Add new item</string>
+    <string name="channel_name">Notification</string>
+    <string name="channel_description">Notification Channel</string>
+    <string name="upcommint_lecture">Upcoming Lecture</string>
+    <string name="sync_mode">Sync Mode</string>
+    <string name="help_center">Help Center</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about">About</string>
+    <string name="sign_out">Sign out</string>
+    <string-array name="notification_status">
+        <item>None</item>
+        <item>5 minutes before</item>
+        <item>10 minutes before</item>
+        <item>15 minutes before</item>
+        <item>30 minutes before</item>
+    </string-array>
+    <string-array name="color_theme">
+        <item>Banana</item>
+        <item>Peacock</item>
+        <item>Basil</item>
+        <item>Blueberry</item>
+        <item>Graphite</item>
+    </string-array>
+    <string-array name="color_values">
+        <item>#F6BF26</item>
+        <item>#039BE5</item>
+        <item>#0B8043</item>
+        <item>#3F51B5</item>
+        <item>#616161</item>
+    </string-array>
 </resources>

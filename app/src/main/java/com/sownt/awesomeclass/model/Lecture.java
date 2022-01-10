@@ -1,20 +1,30 @@
 package com.sownt.awesomeclass.model;
 
-import java.util.Calendar;
+import android.graphics.Color;
 
-public class Lecture {
+import com.google.gson.Gson;
+
+import java.util.Calendar;
+import java.util.Objects;
+
+public class Lecture implements Comparable<Lecture> {
     private String name;
     private Calendar start;
     private Calendar end;
+    private String link;
     private String location;
-    private boolean notification;
-    private int color;
+    private int notification = 0;
+    private int color = Color.parseColor("#F6BF26");
     private String description;
 
-    public Lecture(String name, Calendar start, Calendar end, String location, boolean notification, int color, String description) {
+    public Lecture() {
+    }
+
+    public Lecture(String name, Calendar start, Calendar end, String link, String location, int notification, int color, String description) {
         this.name = name;
         this.start = start;
         this.end = end;
+        this.link = link;
         this.location = location;
         this.notification = notification;
         this.color = color;
@@ -45,6 +55,14 @@ public class Lecture {
         this.end = end;
     }
 
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     public String getLocation() {
         return location;
     }
@@ -53,11 +71,11 @@ public class Lecture {
         this.location = location;
     }
 
-    public boolean isNotification() {
+    public int getNotification() {
         return notification;
     }
 
-    public void setNotification(boolean notification) {
+    public void setNotification(int notification) {
         this.notification = notification;
     }
 
@@ -75,5 +93,38 @@ public class Lecture {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return start.getTime().toString();
+    }
+
+    @Override
+    public int compareTo(Lecture o) {
+        return o.getStart().compareTo(start);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Lecture lecture = (Lecture) o;
+        return notification == lecture.notification && color == lecture.color && name.equals(lecture.name) && start.equals(lecture.start) && end.equals(lecture.end) && link.equals(lecture.link) && location.equals(lecture.location) && description.equals(lecture.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, start, end, link, location, notification, color, description);
+    }
+
+    public static String toJson(Lecture lecture) {
+        Gson gson = new Gson();
+        return gson.toJson(lecture);
+    }
+
+    public static Lecture fromJson(String json) {
+        Gson gson = new Gson();
+        return gson.fromJson(json, Lecture.class);
     }
 }

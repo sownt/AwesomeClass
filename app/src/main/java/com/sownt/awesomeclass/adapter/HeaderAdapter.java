@@ -9,8 +9,10 @@ import com.sownt.awesomeclass.R;
 import com.sownt.awesomeclass.model.Lecture;
 import com.sownt.awesomeclass.ui.viewholder.DateTimeViewHolder;
 import com.sownt.awesomeclass.ui.viewholder.LectureViewHolder;
+import com.sownt.awesomeclass.utils.LectureDatabase;
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersAdapter;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
@@ -22,7 +24,7 @@ public abstract class HeaderAdapter extends RecyclerView.Adapter<LectureViewHold
 
     @Override
     public long getHeaderId(int position) {
-        return lectures.get(position).getStart().get(Calendar.DAY_OF_WEEK);
+        return lectures.get(position).getStart().get(Calendar.DAY_OF_YEAR);
     }
 
     @Override
@@ -35,13 +37,9 @@ public abstract class HeaderAdapter extends RecyclerView.Adapter<LectureViewHold
     @Override
     public void onBindHeaderViewHolder(DateTimeViewHolder dateTimeViewHolder, int i) {
         if (lectures == null) return;
-        int dow = lectures.get(i).getStart().get(Calendar.DAY_OF_WEEK);
-        String weekday = Calendar.getInstance().getDisplayName(
-                dow,
-                Calendar.SHORT,
-                Locale.US
-        );
-        dateTimeViewHolder.setWeekday(weekday);
+        dateTimeViewHolder.setWeekday(new SimpleDateFormat("EE", Locale.getDefault()).format(
+                lectures.get(i).getStart().getTime()
+        ));
         dateTimeViewHolder.setDate(lectures.get(i).getStart().get(Calendar.DAY_OF_MONTH));
     }
 }

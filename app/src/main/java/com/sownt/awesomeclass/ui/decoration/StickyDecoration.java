@@ -3,6 +3,7 @@ package com.sownt.awesomeclass.ui.decoration;
 import android.graphics.Rect;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersAdapter;
@@ -12,7 +13,7 @@ public class StickyDecoration extends StickyRecyclerHeadersDecoration {
     public StickyDecoration(StickyRecyclerHeadersAdapter adapter) {
         super(adapter);
     }
+
     @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-    }
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {}
 }
