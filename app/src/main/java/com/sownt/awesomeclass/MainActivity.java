@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.sownt.awesomeclass.adapter.FragmentAdapter;
+import com.sownt.awesomeclass.interfaces.Callback;
 
 public class MainActivity extends AppCompatActivity {
     public static final int NUM_PAGES = 2;
