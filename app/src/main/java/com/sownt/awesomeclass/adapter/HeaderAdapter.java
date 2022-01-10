@@ -9,6 +9,7 @@ import com.sownt.awesomeclass.R;
 import com.sownt.awesomeclass.model.Lecture;
 import com.sownt.awesomeclass.ui.viewholder.DateTimeViewHolder;
 import com.sownt.awesomeclass.ui.viewholder.LectureViewHolder;
+import com.sownt.awesomeclass.utils.LectureDatabase;
 import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersAdapter;
 
 import java.text.SimpleDateFormat;
