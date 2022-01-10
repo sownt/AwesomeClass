@@ -9,4 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#C3C3C3</color>
     <color name="blue">#2575FF</color>
+    <color name="blue_dark">#00358F</color>
+
+    <color name="theme_1">#F6BF26</color>
+    <color name="theme_2">#039BE5</color>
+    <color name="theme_3">#0B8043</color>
+    <color name="theme_4">#3F51B5</color>
+    <color name="theme_5">#616161</color>
 </resources>

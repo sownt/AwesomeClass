@@ -28,8 +28,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:layout_height="wrap_content"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -38,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
+        android:layout_marginBottom="@dimen/default_spacing"
         app:startIconDrawable="@drawable/ic_round_lock_24"
         app:endIconMode="password_toggle"
         app:layout_constraintBottom_toTopOf="@+id/btn_forgot"
@@ -53,6 +53,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:visibility="gone"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:id="@+id/btn_forgot"
         android:layout_width="wrap_content"
@@ -74,17 +75,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        style="@style/Widget.AppCompat.Button.Borderless"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/i_m_a_new_user"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintBottom_toBottomOf="@id/btn_sign_up"
+        app:layout_constraintTop_toTopOf="@id/btn_sign_up"
+        android:textColor="@color/black" />
+
+    <TextView
         android:id="@+id/btn_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/i_m_a_new_user_sign_up"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
+        android:text="@string/sign_up"
+        android:textColor="@color/blue"
+        android:layout_marginStart="3dp"
         android:layout_marginBottom="@dimen/very_large_spacing"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="187dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
